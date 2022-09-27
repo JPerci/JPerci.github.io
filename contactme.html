@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta lang="en">
     <meta viewport="width=device-width, initial-scale=1">
-    <title>Title</title>
+    <title>Contact Me</title>
     <!--<link rel="stylesheet" href="css/style.css">-->
     <!--<source src="js/script.js" defer>-->
 </head>
@@ -17,35 +17,67 @@
     body {
 
     }
-    #sbutton {
+      #sbutton {
         color: white;
-        background-color: blue;
+        background-color: blueviolet;
         font-size: 24px;
         border: 2px solid white;
         padding: 15px;
         border-radius: 10px;
     }
 
-    input {width: 250px; }
-    textarea { width: 250px}
+    body { background-color: ; }
+    label { font-weight: bold; }
+    input { width: 250px; }
+    textarea { width: 250px;  }
+    input, textarea { max-width: 250px; }
+    
+    #fdiv { 
+        background-color: #ccc;
+        border-radius: 3px;
+        width: 50%;
+        text-align: center;
+        /* 30 top/bot, 15 l/r */
+        padding: 30px 15px; 
+    }
+
+    .rqd {
+        color: darkred;
+        font-weight: normal
+    }
 </style>
 <body>
     <h1 style="font-size: 24px">Contact Me</h1>
     <form action="#" method="post" style="text-align: center;">
         <div style="left; margin-left:">
-            <label for="myname">Name: </label><br/>
+            <label for="myname">Name: <span class="rqd">*</span></label><br/>
             <input type="text" name="myname" id="myname" required/><br/><br/>
 
             <label for="subject">Subject: </label><br/>
             <input type="text" name="subject" id="subject"
                 placeholder="CS 101" required/><br/><br/>
         
-            <textarea name="tbody" id="tbody" required>Enter message...
+            <span class="rqd">*</span>
+            <textarea name="tbody" 
+                 id="tbody" placeholder="Enter message..." required>
             </textarea><br/><br/>
 
             <label for="attach">Attachments: </label><br/>
             <input type="file" name="attach" id="attach"/><br/><br/>
         
+            <label for="priority">Priority: </label><br><br/>
+            <select name="priority" id="priority">
+                <option disabled selected value>-- Select an option --</option>
+                <option value="low">Low</option>
+                <option value="med">Medium</option>
+                <option value="high">High</option>
+                <option value="crit">Critical</option>
+            </select> <br><br/>
+
+            <input type="radio" name="flwup" id="flwup" value="yes"/>Yes<br><br/>
+            <input type="radio" name="flwup" id="flwup" value="No"/>No
+            <br><br/>
+
             <input style="text-align: center" type="submit" value="Submit" id="sbutton"/><br/><br/>
         </div>
     </form>
